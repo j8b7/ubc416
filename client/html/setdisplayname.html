@@ -1,0 +1,16 @@
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta charset="utf-8">
+		<title>CPSC 416 NJS</title>
+        <link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+        <h2>Set display name</h2>
+        <form id="displayName-form" action="/api/users/me/displayname" method="POST">
+            <label><input id="username" type="text" name="displayName" placeholder="Enter display name" maxlength="24" pattern=".{1,24}" title="1 to 24 characters"/></label>
+        </form>
+
+		<script src="js/jquery-1.9.0.min.js"></script>
+        <script src="js/page.setdisplayname.js"></script>
+	</body>
+</html>

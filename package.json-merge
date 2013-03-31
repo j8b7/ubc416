@@ -1,0 +1,16 @@
+{
+  "name": "cpsc416-njs",
+  "version": "0.0.1",
+  "dependencies": {
+    "connect-redis" : "1.4.5",
+    "express" : "2.5.x",
+    "socket.io" : "0.9.x",
+    "passport-facebook" : "0.1.5",
+    "passport" : "0.1.16",
+    "passport-oauth" : "0.1.14"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.2.x"
+  }
+}

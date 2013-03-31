@@ -1,0 +1,39 @@
+{
+  "name": "cpsc416-njs",
+  "version": "0.0.1",
+  "dependencies": {
+<<<<<<< BEGIN MERGE CONFLICT: local copy shown first <<<<<<<<<<<<<<<
+    "connect-redis" : "1.4.5",
+    "express" : "3.x",
+    "redis" : "0.8.2",	
+    "socket.io" : "0.9.12",
+    "passport-facebook" : "0.1.5",
+    "passport" : "0.1.16",
+    "passport-oauth" : "0.1.14"
+======= COMMON ANCESTOR content follows ============================
+    "express" : "2.5.x",
+    "socket.io" : "0.9.6"
+======= MERGED IN content follows ==================================
+    "connect-redis" : "1.4.5",
+    "express" : "2.5.x",
+    "socket.io" : "0.9.x",
+    "passport" : "0.1.16",
+    "passport-facebook" : "0.1.5",
+    "passport-local" : "0.1.6",
+    "passport-oauth" : "0.1.14",
+    "fb" : "0.1.0"
+>>>>>>> END MERGE CONFLICT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  },
+  "engines": {
+<<<<<<< BEGIN MERGE CONFLICT: local copy shown first <<<<<<<<<<<<<<<
+    "node": "0.10.x",
+    "npm": "1.2.x"
+======= COMMON ANCESTOR content follows ============================
+    "node": "0.8.x",
+    "npm": "1.1.x"
+======= MERGED IN content follows ==================================
+    "node": "0.8.x",
+    "npm": "1.2.x"
+>>>>>>> END MERGE CONFLICT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  }
+}

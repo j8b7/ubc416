@@ -1,0 +1,51 @@
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta charset="utf-8">
+		<title>socket.io chat demo</title>
+        <link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+        <div id="graph-region">
+            <canvas id="graph-canvas" width="700" height="400"></canvas>
+        </div>
+        <div id="chat-region">	
+            <textarea id="chat-textarea" rows="20" cols="75" readonly="readonly"></textarea>
+        </div>
+		<br/>
+		<input id="name-input" type="text" placeholder="Name">
+		<input id="message-input" type="text" placeholder="Enter message text">
+		<input id="message-button" type="submit" value="Send">
+
+		<br/><br/>
+		<h4>Node operations<h4/>
+		<input id="newnode-gid" type="text" placeholder="Graph#">
+		<input id="newnode-name" type="text" placeholder="New Node">
+		<input id="newnode-data" type="text" placeholder="Node Data">
+		<input id="newnode-button" type="submit" value="Add">
+		<br/>
+		<input id="delnode-gid" type="text" placeholder="Graph#">
+		<input id="delnode-nid" type="text" placeholder="Node#">
+		<input id="delnode-button" type="submit" value="Delete">
+        </div>
+
+        <h4>Edge operations<h4/>
+		<input id="newedge-gid" type="text" placeholder="Graph#">
+		<input id="newedge-sid" type="text" placeholder="Source Node#">
+		<input id="newedge-tid" type="text" placeholder="Target Node#">
+		<input id="newedge-name" type="text" placeholder="New Edge">
+		<input id="newedge-data" type="text" placeholder="Edge Data">
+		<input id="newedge-button" type="submit" value="Add">
+		<br/>
+		<input id="deledge-gid" type="text" placeholder="Graph#">
+		<input id="deledge-eid" type="text" placeholder="Edge#">
+		<input id="deledge-button" type="submit" value="Delete">
+        </div>
+		
+		<script src="js/jquery-1.9.0.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/arbor.js"></script>		
+        <script src="js/renderer.js"></script>
+		<script src="js/arborManager.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

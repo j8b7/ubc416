@@ -1,0 +1,200 @@
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta charset="utf-8">
+		<title>socket.io chat demo</title>
+<<<<<<< BEGIN MERGE CONFLICT: local copy shown first <<<<<<<<<<<<<<<
+        <link rel="stylesheet" type="text/css" href="https://dl.dropbox.com/u/52029318/cs416/style/mainstyle.css" />
+        <link rel="stylesheet" type="text/css" href="https://dl.dropbox.com/u/52029318/cs416/style/chat.css" />
+        <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+        <script type="text/javascript" >
+
+            $(function () {
+                $(".chatwindowheadermaximize").hide();
+            });
+
+
+        </script>
+
+	</head>
+======= COMMON ANCESTOR content follows ============================
+	</head>
+======= MERGED IN content follows ==================================
+        <link rel="stylesheet" href="css/main.css">
+	</head>
+>>>>>>> END MERGE CONFLICT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	<body>
+<<<<<<< BEGIN MERGE CONFLICT: local copy shown first <<<<<<<<<<<<<<<
+        <script type="text/javascript">
+            var userId = 1500;
+        </script>
+        <input type="button" id="testBtn" onclick="newchat(userId++, 'history message', 'callbackchat' );" value="new Chat" >
+        <p>Welcome to the chat client.</p>
+        <div id="chatarea">
+        
+
+
+            <!--
+            <div class="chatwindow" id="chatwindowuserid" >
+                <div class="chatwindowheader"> <div class="headerinfo">.....</div>
+                    <div class="chatwindowheaderminimize" id="minchatuserid" onclick="minimizechat(120)"><b>\/</b>  </div>
+                    <div class="chatwindowheadermaximize" id="maxchatuserid" onclick="maximizechat(120)"><b>/\</b>  </div>
+                    <div class="chatwindowheaderclose"  onclick="chatuseriddestroy(120)">X </div>
+                </div>
+
+                <div><textarea  class="msghistory" id="chat-area historyuserid" readonly="readonly"></textarea></div>
+
+		        <input id="name-input" type="hidden" value="user">
+		        <input class="msgbox" id="message-input" type="text" placeholder="Enter message text">
+		        <input class="msgbtn" id="message-button" type="submit" value="Send">
+            </div>
+            -->
+
+
+            
+
+            
+	
+            
+		</div>
+
+        <div id="chatbar">
+            
+
+        </div>
+
+        <script src="js/chat.js"></script>
+======= COMMON ANCESTOR content follows ============================
+		<textarea rows="20" cols="80" id="chat-area" readonly="readonly"></textarea>
+		<br/>
+		<input id="name-input" type="text" placeholder="Name">
+		<input id="message-input" type="text" placeholder="Enter message text">
+		<input id="message-button" type="submit" value="Send">
+======= MERGED IN content follows ==================================
+        <div id="graph-region">
+            <canvas id="graph-canvas" width="700" height="400"></canvas>
+        </div>
+        <div id="chat-region">	
+            <textarea id="chat-textarea" rows="20" cols="75" readonly="readonly"></textarea>
+        </div>
+		<br/>
+		<input id="name-input" type="text" placeholder="Name">
+		<input id="message-input" type="text" placeholder="Enter message text">
+		<input id="message-button" type="submit" value="Send">
+>>>>>>> END MERGE CONFLICT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		<br/><br/>
+		<h4>Node operations<h4/>
+		<input id="newnode-gid" type="text" placeholder="Graph#">
+		<input id="newnode-name" type="text" placeholder="New Node">
+		<input id="newnode-data" type="text" placeholder="Node Data">
+		<input id="newnode-button" type="submit" value="Add">
+		<br/>
+		<input id="delnode-gid" type="text" placeholder="Graph#">
+		<input id="delnode-nid" type="text" placeholder="Node#">
+		<input id="delnode-button" type="submit" value="Delete">
+        </div>
+		
+<<<<<<< BEGIN MERGE CONFLICT: local copy shown first <<<<<<<<<<<<<<<
+		<script src="/socket.io/socket.io.js"></script>		
+======= COMMON ANCESTOR content follows ============================
+		<script src="js/jquery-1.9.0.js"></script>
+		<script src="/socket.io/socket.io.js"></script>		
+======= MERGED IN content follows ==================================
+		<script src="js/jquery-1.9.0.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/arbor.js"></script>		
+        <script src="js/renderer.js"></script>
+		<script src="js/arborManager.js"></script>
+>>>>>>> END MERGE CONFLICT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+		<script src="js/main.js"></script>
+        
+        <script src="js/jquery.tmpl.js" type="text/javascript"></script>
+        <script src="js/jquery.tmplPlus.js" type="text/javascript"></script>
+        <script src="js/jquery.pager.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-1.8.1.custom.js" type="text/javascript"></script>
+        
+
+
+
+
+        <script id="chatTmpl" type="text/x-jquery-tmpl">
+            <div class="chatwindow" id="${userid}">
+                <div class="chatwindowheader"> <div class="headerinfo">${username}</div>
+                    <div class="chatwindowheaderminimize"><b>\/</b>  </div>
+                    <div class="chatwindowheaderclose">X </div>
+                </div>
+                
+                <div><textarea  class="msghistory" id="chat-area" readonly="readonly">${messagehistory}</textarea></div>
+            
+		        <input id="name-input" type="hidden" value="${userid}">
+		        <input class="msgbox" id="message-input" type="text" placeholder="Enter message here">
+		        <input class="msgbtn" id="message-button" type="submit" value="Send">
+            </div>
+
+        </script>
+
+        <script type="text/javascript">
+            function getMovies(index) {
+                var query = "http://odata.netflix.com/Catalog/Genres('" + genre + "')/Titles" +
+                        "?$format=json" +
+                        "&$inlinecount=allpages" +              // get total number of records
+                        "&$skip=" + (index - 1) * pageSize +      // skip to first record of page
+                        "&$top=" + pageSize;                    // page size
+                pageIndex = index;
+                $("#movieList")
+                        .fadeOut("medium", function () {
+                            $.ajax({
+                                dataType: "jsonp",
+                                url: query,
+                                jsonp: "$callback",
+                                success: showchat
+                            });
+                        });
+            }
+
+            function showchat(data) {
+                pageCount = Math.ceil(data.d.__count / pageSize),
+                movies = data.d.results;
+                $("#pager").pager({ pagenumber: pageIndex, pagecount: pageCount, buttonClickCallback: getMovies });
+                // show movies in template
+
+                $("#movieTmpl")
+                // Render movies using the movieTemplate
+                .tmpl(movies)
+                // Display rendered chat windows inside chat area.
+                .appendTo("#chatarea");
+            }
+
+
+
+            function minimizechat(id) {
+                var idtomimimize = "historyuser" + id;
+                
+                $('#minchatuserid').hide();
+                $('#maxchatuserid').show();
+                
+              //  $("#historyuserid").hide();
+            }
+
+
+
+            function maximizechat(id) {
+                var idtomimimize = "historyuser" + id;
+                
+                $('#maxchatuserid').hide();
+                $('#minchatuserid').show();
+
+                $("#historyuserid").show();
+            }
+
+
+            function chatuseriddestroy(id) {
+                var idtomimimize = "discardchat" + id;
+                $("#chatwindowuserid").hide(1000);
+            }
+
+
+         </script>
+
+	</body>
+</html>

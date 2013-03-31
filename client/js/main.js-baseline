@@ -1,0 +1,22 @@
+$(document).ready(function() {
+
+	var socket = io.connect(window.location.hostname, {
+		transports: ['xhr-polling']
+	});
+
+	$('#message-button').on('click', function() {
+		var name = $('#name-input').val();
+		var message = $('#message-input').val();
+
+		console.log('Sending message: ' + name + ': ' + message);
+		socket.emit('message', {
+			name: name,
+			message: message
+		});
+	});
+
+	socket.on('message', function(data) {
+		console.log('Received message: ' + data.name + ': ' + data.message);
+		$('#chat-area').append(data.name + ': ' + data.message + '\n');
+	});
+});

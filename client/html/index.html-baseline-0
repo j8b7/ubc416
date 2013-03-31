@@ -1,0 +1,17 @@
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta charset="utf-8">
+		<title>socket.io chat demo</title>
+	</head>
+	<body>
+		<textarea rows="20" cols="80" id="chat-area" readonly="readonly"></textarea>
+		<br/>
+		<input id="name-input" type="text" placeholder="Name">
+		<input id="message-input" type="text" placeholder="Enter message text">
+		<input id="message-button" type="submit" value="Send">
+		
+		<script src="js/jquery-1.9.0.js"></script>
+		<script src="/socket.io/socket.io.js"></script>		
+		<script src="js/main.js"></script>
+	</body>
+</html>

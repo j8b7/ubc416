@@ -1,0 +1,35 @@
+
+
+function chatBox(userId, history, callbackchatfunction)
+{
+    var rturnval = '<div class="chatwindow" id="chatwindow' + userId +'" >';
+    rturnval += '<div class="chatwindowheader"> <div class="headerinfo">...' + userId + '...</div>';
+    rturnval += '<div class="chatwindowheaderminimize" id="minchat' + userId + '" onclick="minimizechat(120)"><b>\/</b>  </div>';
+    rturnval += '<div class="chatwindowheadermaximize" id="maxchat' + userId + '" onclick="maximizechat(120)"><b>/\</b>  </div>';
+    rturnval += '<div class="chatwindowheaderclose"  onclick="chatuseriddestroy(120)">X </div>';
+    rturnval += '</div>';
+    //    rturnval +=
+    rturnval += '<div><textarea  class="msghistory" id="chat-area history' + userId + '" readonly="readonly">' + history + '</textarea></div>';
+       // rturnval +=
+	rturnval += '<input id="name-input" type="hidden" value="' + userId + '">';
+    rturnval += '<input class="msgbox" id="message-input' + userId +'" type="text" placeholder="Enter message text">';
+	rturnval += '<input class="msgbtn" id="message-button" type="submit" value="Send" onclick="' + callbackchatfunction +'('+ userId +')" >';
+	rturnval += '</div>';
+
+
+    return rturnval;
+}
+
+function newchat(userId, history, callbackchatfunction){
+    if (history == null)
+        history = "";
+    $("#chatarea").append(chatBox(userId, history, callbackchatfunction));
+}
+
+
+// sample call back function
+function sendchat(userId,callbackchatfunction){
+    var cht = $("#message-input" + userId).val();
+    // send it using socket
+}
+

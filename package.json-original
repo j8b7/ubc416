@@ -1,0 +1,17 @@
+{
+  "name": "njs-sam",
+  "version": "0.0.1",
+  "dependencies": {
+    "connect-redis" : "1.4.5",
+    "express" : "3.x",
+    "redis" : "0.8.2",	
+    "socket.io" : "0.9.12",
+    "passport-facebook" : "0.1.5",
+    "passport" : "0.1.16",
+    "passport-oauth" : "0.1.14"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}

@@ -1,0 +1,59 @@
+$(document).ready(function() {
+
+    var arborManager = new ArborManager();
+    arborManager.retrieveGraph();
+
+	var socket = io.connect(window.location.hostname, {
+		transports: ['xhr-polling']
+	});
+
+	$('#message-button').on('click', function() {
+		var name = $('#name-input').val();
+		var message = $('#message-input').val();
+
+		console.log('Sending message: ' + name + ': ' + message);
+		socket.emit('message', {
+			name: name,
+			message: message
+		});
+	});
+
+	$('#newnode-button').on('click', function() {
+		var gid = $('#newnode-gid').val();
+		var name = $('#newnode-name').val();
+		var data = $('#newnode-data').val();
+
+		console.log('Adding node: ' + name + ': ' + data);
+		socket.emit('add-node', {
+			gid: gid,
+			name: name,
+			data: data
+		});
+	});
+
+	$('#delnode-button').on('click', function() {
+		var gid = $('#delnode-gid').val();
+		var nid = $('#delnode-nid').val();
+
+		console.log('Deleting node: ' + nid + ' from graph: ' + gid);
+		socket.emit('del-node', {
+			gid: gid,
+			nid: nid
+		});
+	});
+
+	socket.on('message', function(data) {
+		console.log('Received message: ' + data.name + ': ' + data.message);
+		$('#chat-textarea').append(data.name + ': ' + data.message + '\n');
+	});
+
+	socket.on('node-response', function(data) {
+		if (data.err) {
+			console.log('Error: ' + data.message);
+		} else {
+			//arborManager.retrieveGraph(data.gid);
+			// Auto-redraw crashes the browser on the second node added (second only!)
+			// Auto-redraw doesn't work for node delete
+		}
+	});
+});
